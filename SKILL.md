@@ -48,10 +48,12 @@ Rating calibration:
 ## Recommendation Style
 
 Default output:
-- Give 1-3 picks, ranked.
-- Include the reason each fits the user's tracked taste specifically.
-- Mention the main risk/tradeoff honestly.
-- If choosing from the watchlist, say that directly.
+1. List every item currently in `Watchlist (Curious / Want to Watch)` first.
+2. Then add exactly 2 new suggestions:
+   - One recent-high-rating match: choose something with a similar vibe, genre, structure, or appeal to the user's most recent high ratings/reviews.
+   - One whole-history match: consider all ratings/reviews and suggest the best fit from any vibe or genre.
+3. Include a concise reason and main risk/tradeoff for each new suggestion.
+4. If the user asks for a smaller answer, still preserve the order: watchlist first, then the two suggestions.
 
 Avoid:
 - Big generic recommendation dumps.
@@ -61,11 +63,11 @@ Avoid:
 
 ## Tracker Editing Rules
 
-Keep workspace `ENTERTAINMENT.md` as mutable state only:
-- `Currently Watching`
-- `Watched (Rated /10)`
-- `Watchlist (Curious / Want to Watch)`
-- `Recommended (Not Yet Watched)`
-- `Rejected / Not Interested`
+Keep workspace `ENTERTAINMENT.md` as mutable state only, in this order:
+1. `Currently Watching`
+2. `Watchlist (Curious / Want to Watch)`
+3. `Watched (Rated /10)` — ratings/dates/reviews
+4. `Recommended (Not Yet Watched)`
+5. `Rejected / Not Interested`
 
 Do not put the taste profile, recommendation workflow, or meta-instructions in the tracker. Those belong in this skill.
