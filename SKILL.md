@@ -1,25 +1,25 @@
 ---
 name: entertainment
-description: Track Wells's movies/shows and make taste-aware entertainment recommendations. Use for any request involving what to watch, movie/show recommendations, watchlist updates, ratings, watched/currently-watching status, or entertainment taste calibration.
+description: Track the user's movies/shows and make taste-aware entertainment recommendations. Use for any request involving what to watch, movie/show recommendations, watchlist updates, ratings, watched/currently-watching status, or entertainment taste calibration.
 ---
 
 # Entertainment Skill
 
-Manage Wells's entertainment tracker and recommendations. The live tracker is `/Users/chappy/chappy/ENTERTAINMENT.md`.
+Manage the user's entertainment tracker and recommendations. The live tracker is `ENTERTAINMENT.md` in the workspace root.
 
 ## Required Workflow
 
-1. Read `/Users/chappy/chappy/ENTERTAINMENT.md` fresh before recommending or updating anything.
+1. Read workspace `ENTERTAINMENT.md` fresh before recommending or updating anything.
 2. Use the taste profile below plus the watched ratings to calibrate suggestions.
 3. Prefer a short, opinionated answer over a generic list.
-4. When Wells gives feedback, update the tracker immediately:
+4. When the user gives feedback, update the tracker immediately:
    - Finished title + rating/notes → move/add under `Watched (Rated /10)`.
    - Started title → add/update `Currently Watching`.
    - Curious/wants to watch → add/update `Watchlist`.
    - Rejected/not interested → add/update `Rejected / Not Interested`.
 5. Verify tracker edits by re-reading the relevant section before claiming it was updated.
 
-## Wells's Taste Profile
+## Taste Profile
 
 Strong positive signals:
 - Mystery thrillers with engaging plots and real payoff.
@@ -49,9 +49,9 @@ Rating calibration:
 
 Default output:
 - Give 1-3 picks, ranked.
-- Include the reason each fits Wells specifically.
+- Include the reason each fits the user's tracked taste specifically.
 - Mention the main risk/tradeoff honestly.
-- If choosing from his watchlist, say that directly.
+- If choosing from the watchlist, say that directly.
 
 Avoid:
 - Big generic recommendation dumps.
@@ -61,7 +61,7 @@ Avoid:
 
 ## Tracker Editing Rules
 
-Keep `/Users/chappy/chappy/ENTERTAINMENT.md` as mutable state only:
+Keep workspace `ENTERTAINMENT.md` as mutable state only:
 - `Currently Watching`
 - `Watched (Rated /10)`
 - `Watchlist (Curious / Want to Watch)`
