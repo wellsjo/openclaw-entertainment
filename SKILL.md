@@ -20,6 +20,17 @@ Manage the user's entertainment tracker and recommendations. The live tracker is
    - Taste preference/rating calibration feedback → update `Taste Profile` in `ENTERTAINMENT.md`.
 5. Verify tracker edits by re-reading the relevant section before claiming it was updated.
 
+## Rating Calibration
+
+Use this generic rating framework unless the workspace tracker defines a more specific one:
+- 9-10: elite / S-tier; incredible or endlessly rewatchable, can watch any time.
+- 8-8.9: classic / highly rewatchable; great and strongly memorable.
+- 7-7.9: great; keeps attention and is worth watching, even if flawed.
+- 6-6.9: watchable but not fully gripping; has notable weaknesses.
+- Below 6: generally not worth recommending unless there is a specific reason.
+
+When updating ratings, preserve decimals when the user gives them. Treat reviews/notes as part of the calibration signal, not just the numeric score.
+
 ## Recommendation Style
 
 Default output:
