@@ -16,7 +16,7 @@ Manage the user's entertainment tracker and recommendations. The live tracker is
    - Finished title + rating/notes → move/add under `Watched (Rated /10)`.
    - Started title → add/update `Currently Watching`.
    - Curious/wants to watch → add/update `Watchlist`.
-   - Rejected/not interested → add/update `Rejected / Not Interested`.
+   - Rejected/not interested → add/update `Rejected / Not Interested`. If the user says they do not want to watch something, dislikes the premise, or wants it removed from consideration, put it there with the reason.
 5. Verify tracker edits by re-reading the relevant section before claiming it was updated.
 
 ## Taste Profile
