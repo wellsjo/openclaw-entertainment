@@ -36,11 +36,11 @@ When updating ratings, preserve decimals when the user gives them. Treat reviews
 Default output:
 1. List every item currently in `Watchlist (Curious / Want to Watch)` first.
 2. Then add exactly 3 new suggestions:
-   - One recent-high-rating match: choose something with a similar vibe, genre, structure, or appeal to the user's most recent high ratings/reviews.
    - One last-watched movie/show match: key off the single most recent movie or show in `Watched (Rated /10)`, even if it was not highly rated; either continue that genre/vibe with a stronger version, or deliberately correct the failure mode noted in the review. Example: if they just watched a dystopian zombie thriller like `Bone Temple`, this slot should recommend another strong dystopian zombie/apocalypse thriller, not default back to the recent-high-rating genre.
+   - One recent-high-rating match: choose something with a similar vibe, genre, structure, or appeal to the user's most recent high ratings/reviews.
    - One whole-history match: consider all ratings/reviews and suggest the best fit from any vibe or genre.
 3. Include a concise reason and main risk/tradeoff for each new suggestion.
-4. If the user asks for a smaller answer, still preserve the order: watchlist first, then recent, last-watched movie/show, and whole-history suggestions.
+4. If the user asks for a smaller answer, still preserve the order: watchlist first, then last-watched movie/show, recent, and whole-history suggestions.
 
 Avoid:
 - Big generic recommendation dumps.
