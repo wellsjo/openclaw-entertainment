@@ -12,13 +12,14 @@ Manage the user's entertainment tracker and recommendations. The live tracker is
 1. Read workspace `ENTERTAINMENT.md` fresh before recommending or updating anything.
 2. Use the tracker's `Taste Profile` section plus watched ratings/reviews to calibrate suggestions.
 3. Prefer a short, opinionated answer over a generic list.
-4. When the user gives feedback, update the tracker immediately:
+4. Include IMDb rating next to every recommended movie/show title. Use format `Title` (Year) — IMDb X.X. If the rating is not already known from reliable context, look it up before recommending; if lookup is unavailable, write `IMDb unavailable` rather than guessing.
+5. When the user gives feedback, update the tracker immediately:
    - Finished title + rating/notes → move/add under `Watched (Rated /10)`.
    - Started title → add/update `Currently Watching`.
    - Curious/wants to watch → add/update `Watchlist`.
    - Rejected/not interested → add/update `Rejected / Not Interested`. If the user says they do not want to watch something, dislikes the premise, or wants it removed from consideration, put it there with the reason.
    - Taste preference/rating calibration feedback → update `Taste Profile` in `ENTERTAINMENT.md`.
-5. Verify tracker edits by re-reading the relevant section before claiming it was updated.
+6. Verify tracker edits by re-reading the relevant section before claiming it was updated.
 
 ## Rating Calibration
 
@@ -34,8 +35,8 @@ When updating ratings, preserve decimals when the user gives them. Treat reviews
 ## Recommendation Style
 
 Default output:
-1. List every item currently in `Watchlist (Curious / Want to Watch)` first.
-2. Then add exactly 3 new suggestions:
+1. List every item currently in `Watchlist (Curious / Want to Watch)` first, with IMDb rating next to each title.
+2. Then add exactly 3 new suggestions, with IMDb rating next to each title:
    - One last-watched movie/show match: key off the single most recent movie or show in `Watched (Rated /10)`, even if it was not highly rated; either continue that genre/vibe with a stronger version, or deliberately correct the failure mode noted in the review. Example: if they just watched a dystopian zombie thriller like `Bone Temple`, this slot should recommend another strong dystopian zombie/apocalypse thriller, not default back to the recent-high-rating genre.
    - One recent-high-rating match: choose something with a similar vibe, genre, structure, or appeal to the user's most recent high ratings/reviews.
    - One whole-history match: consider all ratings/reviews and suggest the best fit from any vibe or genre.
