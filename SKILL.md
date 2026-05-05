@@ -12,7 +12,7 @@ Manage the user's entertainment tracker and recommendations. The live tracker is
 1. Read workspace `ENTERTAINMENT.md` fresh before recommending or updating anything.
 2. Use the tracker's `Taste Profile` section plus watched ratings/reviews to calibrate suggestions.
 3. Prefer a short, opinionated answer over a generic list.
-4. Include IMDb rating next to every recommended movie/show title. Use format `Title` (Year) — IMDb X.X. If the rating is not already known from reliable context, look it up before recommending; if lookup is unavailable, write `IMDb unavailable` rather than guessing.
+4. Include rating next to every recommended movie/show title. Use format `Title` (Year) — X.X. If the rating is not already known from reliable context, look it up before recommending; if lookup is unavailable, write `rating unavailable` rather than guessing.
 5. When the user gives feedback, update the tracker immediately:
    - Finished title + rating/notes → move/add under `Watched (Rated /10)`.
    - Started title → add/update `Currently Watching`.
