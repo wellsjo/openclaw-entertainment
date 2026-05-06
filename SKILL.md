@@ -1,6 +1,6 @@
 ---
 name: entertainment
-description: Track the user's movies/shows and make taste-aware entertainment recommendations. Use for any request involving what to watch, movie/show recommendations, watchlist updates, ratings, watched/currently-watching status, rejected/not-interested titles, or entertainment taste calibration.
+description: Track the user's movies/shows and make taste-aware entertainment recommendations. Use for any entertainment request, especially casual chat triggers like "movie rec", "show rec", "next rec", "what should I watch", "what's next", "I watched/loved/hated X", or any request involving recommendations, watchlist updates, ratings, watched/currently-watching status, rejected/not-interested titles, or taste calibration.
 ---
 
 # Entertainment Skill
