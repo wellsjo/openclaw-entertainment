@@ -34,14 +34,23 @@ When updating ratings, preserve decimals when the user gives them. Treat reviews
 
 ## Recommendation Style
 
-Default output:
-1. List every item currently in `Watchlist (Curious / Want to Watch)` first, with IMDb rating next to each title.
-2. Then add exactly 3 new suggestions, with IMDb rating next to each title:
+Treat an initial recommendation request and its follow-up `next` requests as one recommendation sequence. Track every title offered during that sequence.
+
+At the start of a recommendation sequence:
+1. List every item currently in `Watchlist (Curious / Want to Watch)` first, with IMDb rating next to each title. Show this watchlist only in the first response of the sequence.
+2. Then add exactly 5 new suggestions that are not already on the watchlist, with IMDb rating next to each title:
    - One last-watched movie/show match: key off the single most recent movie or show in `Watched (Rated /10)`, even if it was not highly rated; either continue that genre/vibe with a stronger version, or deliberately correct the failure mode noted in the review. Example: if they just watched a dystopian zombie thriller like `Bone Temple`, this slot should recommend another strong dystopian zombie/apocalypse thriller, not default back to the recent-high-rating genre.
    - One recent-high-rating match: choose something with a similar vibe, genre, structure, or appeal to the user's most recent high ratings/reviews.
    - One whole-history match: consider all ratings/reviews and suggest the best fit from any vibe or genre.
+   - Two additional strong fits based on the taste profile and ratings/reviews. Prefer useful variety when several options fit equally well.
 3. Include a concise reason and main risk/tradeoff for each new suggestion.
-4. If the user asks for a smaller answer, still preserve the order: watchlist first, then last-watched movie/show, recent, and whole-history suggestions.
+
+When the user says `next` during the sequence:
+1. Do not show the watchlist again.
+2. Return exactly 5 fresh suggestions, using the same matching priorities above.
+3. Exclude every title already offered during the sequence and every title currently on the watchlist.
+
+If the user asks for a smaller answer, shorten the reason and risk for each item. Keep exactly 5 new suggestions and preserve the order of the matching priorities above.
 
 Avoid:
 - Big generic recommendation dumps.
