@@ -1,11 +1,11 @@
 ---
 name: entertainment
-description: Track the user's movies/shows and make taste-aware entertainment recommendations. Use for any entertainment request, especially casual chat triggers like "movie rec", "show rec", "next rec", "what should I watch", "what's next", "I watched/loved/hated X", or any request involving recommendations, watchlist updates, ratings, watched/currently-watching status, rejected/not-interested titles, or taste calibration.
+description: Track the user's movies/shows and restaurants, and make taste-aware recommendations. Use for any entertainment or dining request, especially casual chat triggers like "movie rec", "show rec", "next rec", "what should I watch", "what's next", "I watched/loved/hated X", "where should we eat", "restaurant rec", "dinner spot", "what should I order at X", "we went to/liked/hated <restaurant>", or any request involving recommendations, watchlist updates, ratings, watched/currently-watching status, rejected/not-interested titles, restaurant feedback, or taste calibration.
 ---
 
 # Entertainment Skill
 
-Manage the user's entertainment tracker and recommendations. The live tracker is `ENTERTAINMENT.md` in the workspace root.
+Manage the user's entertainment tracker and recommendations. The live tracker is `ENTERTAINMENT.md` in the workspace root; it holds the taste profile, watch state, and the restaurant log.
 
 ## Required Workflow
 
@@ -19,6 +19,7 @@ Manage the user's entertainment tracker and recommendations. The live tracker is
    - Curious/wants to watch → add/update `Watchlist`.
    - Rejected/not interested → add/update `Rejected / Not Interested`. If the user says they do not want to watch something, dislikes the premise, or wants it removed from consideration, put it there with the reason.
    - Taste preference/rating calibration feedback → update `Taste Profile` in `ENTERTAINMENT.md`.
+   - Visited restaurant + liked/disliked/rating/dishes → add/update `Restaurants`.
 6. Verify tracker edits by re-reading the relevant section before claiming it was updated.
 
 ## Rating Calibration
@@ -58,6 +59,15 @@ Avoid:
 - Pretending a title is a perfect fit when it has a known mismatch.
 - Recommending near-duplicates of low-rated items unless explaining why this one avoids the failure mode.
 
+## Restaurant Recommendations
+
+The movie/show rules above (IMDb ratings, watchlist-first, exactly-5 sequence) do not apply to restaurants.
+
+1. Read `Restaurants` first. Favor liked places and their patterns; avoid disliked places and their failure modes.
+2. Live-check current hours/open-now, address, reservation vs walk-in, and the current menu before recommending. Never guess hours; if a check fails, say so.
+3. Give one opinionated pick plus specific dishes to order.
+4. When asked for alternatives, offer 1-3 nearby options with distance and vibe.
+
 ## Tracker Editing Rules
 
 Keep workspace `ENTERTAINMENT.md` as mutable state in this order:
@@ -67,5 +77,6 @@ Keep workspace `ENTERTAINMENT.md` as mutable state in this order:
 4. `Watched (Rated /10)` — ratings/dates/reviews.
 5. `Recommended (Not Yet Watched)`.
 6. `Rejected / Not Interested`.
+7. `Restaurants` — table with columns `Name | Area | Type | Rating | Last Visited | Notes`. Rating is /10 when given, otherwise `Liked`/`Disliked`. Notes hold dishes worth reordering or skipping.
 
-Do not put personal taste data directly in this skill. The skill should define the workflow; `ENTERTAINMENT.md` owns the user's taste profile and watch state.
+Do not put personal taste data directly in this skill. The skill should define the workflow; `ENTERTAINMENT.md` owns the user's taste profile, watch state, and restaurant log.
